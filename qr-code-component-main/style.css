@@ -1,0 +1,83 @@
+/* Reset some default styles and font styles for the body */
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  height: 100%;
+  font-family: "Outfit", sans-serif;
+  font-weight: 400;
+}
+
+/* Center the container on the page */
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  max-width: 1440px;
+  background-color: hsl(212, 45%, 89%);
+  margin: 0 auto;
+}
+
+/* Add a box shadow and background color to the card */
+.card {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  background-color: hsl(0, 0%, 100%);
+  border-radius: 8px;
+  overflow: hidden;
+  max-width: 45%;
+  margin: 0 auto;
+}
+
+/* Style the card image */
+.card-img-top {
+  width: 90%;
+  height: auto;
+  margin: 5%;
+  border-radius: 8px;
+}
+
+/* Add padding to the card body */
+.card-body {
+  padding: 20px;
+  padding-top: 0px;
+  text-align: center;
+}
+
+/* Style the card text */
+.card-text {
+  font-size: 15px;
+  color: hsl(220, 15%, 55%);
+}
+
+/* Style the card title */
+.card-title {
+  font-size: 18px;
+  color: hsl(218, 44%, 22%);
+}
+
+/* Style the footer */
+.footer {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 15px;
+  color: hsl(220, 15%, 55%);
+}
+
+/* Style the footer links */
+.footer a {
+  color: hsl(218, 44%, 22%);
+  text-decoration: none;
+}
+
+.footer a:hover {
+  color: blue;
+}
+
+/* Style Mobile */
+@media (max-width: 375px) {
+  .card {
+    max-width: 85%;
+  }
+}
