@@ -10,7 +10,7 @@ You can check out all of my completed projects live [here](https://frontend-ment
 
 Below is a list of the challenges I have completed:
 
-1. [QR code component](https://github.com/ahmed-aouinti/frontend-mentor-challenges/qr-code-component-main)
+1. [QR code component](https://github.com/ahmed-aouinti/frontend-mentor-challenges/tree/main/qr-code-component-main)
    - [Live Demo](https://qr-code-01.netlify.app/)
 
 I will continue to update this repository with my latest submissions. Stay tuned for more exciting projects!
