@@ -1,22 +1,29 @@
 const projects = [
   {
     name: "qr-code-component-main",
+    url: "https://qr-code-01.netlify.app",
+    imgPath: "qr-code-component-main",
+  },
+  {
+    name: "age-calculator-app-main",
+    url: "https://age-calculator-app01.netlify.app",
+    imgPath: "age-calculator-app-main/src/assets",
   },
 ];
 
 const list = document.getElementById("list");
 
-projects.forEach(({ name }, i) => {
+projects.forEach(({ name, url, imgPath }, i) => {
   const listItem = document.createElement("li");
 
   listItem.innerHTML = `
-		<a href="/${name}/index.html">
-			<img src="/${name}/images/desktop-preview.png" alt="${name}" />
+		<a href="${url}">
+			<img src="/${imgPath}/images/desktop-preview.jpg" alt="${name}" />
 			<p>${i + 1}. ${formatProjectName(name)}</p>
 		</a>
 
 		<div class="links-container">
-			<a href="/${name}/index.html" class="blue">
+			<a href="${url}" class="blue">
 				<i class="fas fa-eye" ></i>
 			</a>
 		</div>

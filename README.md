@@ -4,7 +4,7 @@ Welcome to my repository for Frontend Mentor challenges! Here, you'll find my so
 
 ## Live Demo
 
-You can check out all of my completed projects live [here](https://frontend-mentor-all-challenges.netlify.app). Feel free to explore and interact with them.
+You can check out all of my completed projects live [here](https://frontend-mentor-challeges.netlify.app/). Feel free to explore and interact with them.
 
 ## Challenges Completed
 
