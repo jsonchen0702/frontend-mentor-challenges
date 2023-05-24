@@ -1,0 +1,155 @@
+@font-face {
+  font-family: "PoppinsExtratBoldItalic";
+  src: url(../../assets/fonts/Poppins-ExtraBoldItalic.ttf) format("truetype");
+}
+
+.container {
+  background-color: hsl(0, 0%, 100%);
+  padding: 50px;
+  border-radius: 20px 20px 100px 20px;
+  margin: 20%;
+}
+.form-group {
+  margin-bottom: 8px;
+}
+
+/* Style for input container */
+.input-age {
+  display: flex;
+}
+
+input.ng-invalid.ng-touched {
+  border: 1px solid hsl(0, 100%, 67%);
+}
+
+input[type="text"] {
+  width: 90%;
+  padding: 10px;
+  border: 1px solid hsl(0, 0%, 86%);
+  border-radius: 10px;
+  font-size: 24px;
+  font-weight: bold;
+  color: hsl(0, 0%, 8%);
+}
+
+input::placeholder {
+  font-weight: bold;
+  color: hsl(0, 1%, 44%);
+}
+
+input:hover {
+  border: 2px solid hsl(259, 100%, 65%);
+  cursor: pointer;
+}
+
+label {
+  font-size: 12px;
+  font-weight: bold;
+  color: hsl(0, 1%, 44%);
+  padding-left: 2px;
+}
+
+label.touched-invalid {
+  color: hsl(0, 100%, 67%);
+}
+
+/* Style for error messages */
+.error-message {
+  color: hsl(0, 100%, 67%);
+  font-size: 10px;
+}
+
+/* Style for the submit button */
+.submit-age {
+  display: flex;
+  margin: 16px 0px;
+}
+
+.btn {
+  padding: 15px 20px;
+  background-color: hsl(259, 100%, 65%);
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background-color: hsl(0, 0%, 8%);
+}
+
+.svg-button img {
+  width: 20px;
+}
+
+/* Style for the age sections */
+.ageYears,
+.ageMonths,
+.ageDays {
+  font-size: 58px;
+  margin: 10px;
+  padding: 10px;
+  color: hsl(259, 100%, 65%);
+  font-family: "PoppinsExtratBoldItalic", sans-serif !important;
+}
+
+strong {
+  color: hsl(0, 0%, 8%);
+}
+
+/* Style for the hr */
+hr {
+  width: 90%;
+  margin: 25px 0;
+  border: none;
+  border-top: 1px solid hsl(0, 0%, 86%);
+}
+
+/* Style for columns */
+.col-xs-12 {
+  display: flex;
+  flex-direction: column;
+}
+
+/*Style for the mobile viewport*/
+@media (max-width: 750px) {
+  .container {
+    width: 95%;
+    margin: 0 auto;
+    width: 90vw;
+  }
+  .ageYears,
+  .ageMonths,
+  .ageDays {
+    font-size: 44px;
+    margin: 10px 0px;
+    padding: 5px;
+  }
+}
+
+@media (max-width: 375px) {
+  .container {
+    width: 95%;
+    margin: 0 auto;
+    width: 90vw;
+  }
+  input[type="text"] {
+    font-size: 14px;
+  }
+  .submit-age {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .btn {
+    margin-top: -50px;
+  }
+  hr {
+    width: 100%;
+  }
+  .ageYears,
+  .ageMonths,
+  .ageDays {
+    font-size: 40px;
+    margin: 10px 0px;
+    padding: 5px;
+  }
+}

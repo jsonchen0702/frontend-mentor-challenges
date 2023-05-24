@@ -1,0 +1,125 @@
+<div class="row container">
+  <div class="col-xs-12">
+    <form [formGroup]="ageForm" (ngSubmit)="onSubmit()">
+      <div class="row input-age">
+        <div class="col-xs-12">
+          <div class="form-group">
+            <label
+              for="day"
+              [class.touched-invalid]="isInputInvalidTouched('day')"
+              >DAY</label
+            >
+            <input
+              type="text"
+              id="day"
+              class="form-control"
+              formControlName="day"
+              placeholder="DD"
+            />
+          </div>
+          <div
+            class="error-message"
+            *ngIf="ageForm.get('day')?.invalid && ageForm.get('day')?.touched"
+          >
+            <span *ngIf="ageForm.get('day')?.dirty; else requiredInput"
+              >Must a valid day</span
+            ><ng-template #requiredInput>
+              <span>This field is required</span>
+            </ng-template>
+            <span>{{ message }}</span>
+          </div>
+        </div>
+
+        <div class="col-xs-12">
+          <div class="form-group">
+            <label
+              for="month"
+              [class.touched-invalid]="isInputInvalidTouched('month')"
+              >MONTH</label
+            >
+            <input
+              type="text"
+              id="month"
+              class="form-control"
+              formControlName="month"
+              placeholder="MM"
+            />
+          </div>
+          <div
+            class="error-message"
+            *ngIf="
+              ageForm.get('month')?.invalid && ageForm.get('month')?.touched
+            "
+          >
+            <span *ngIf="ageForm.get('month')?.dirty; else requiredInput"
+              >Must a valid month</span
+            ><ng-template #requiredInput>
+              <span>This field is required</span>
+            </ng-template>
+          </div>
+        </div>
+
+        <div class="col-xs-12">
+          <div class="form-group">
+            <label
+              for="year"
+              [class.touched-invalid]="isInputInvalidTouched('year')"
+              >YEAR</label
+            >
+            <input
+              type="text"
+              id="year"
+              class="form-control"
+              formControlName="year"
+              placeholder="YYYY"
+            />
+          </div>
+          <div
+            class="error-message"
+            *ngIf="ageForm.get('year')?.invalid && ageForm.get('year')?.touched"
+          >
+            <span *ngIf="ageForm.get('year')?.dirty; else requiredInput"
+              >Must be in the past</span
+            ><ng-template #requiredInput
+              ><span>This field is required</span></ng-template
+            >
+          </div>
+        </div>
+      </div>
+
+      <div class="row submit-age">
+        <hr />
+        <button
+          class="btn svg-button"
+          type="submit"
+          [disabled]="ageForm.invalid"
+        >
+          <img src="../../assets/images/icon-arrow.svg" alt="Arrow Icon" />
+        </button>
+      </div>
+      <div class="output-age">
+        <div class="row">
+          <div class="col-xs-12">
+            <p class="ageYears">
+              {{ years ? years : "--" }} <strong>years</strong>
+            </p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-xs-12">
+            <p class="ageMonths">
+              {{ months ? months : "--" }} <strong>months</strong>
+            </p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-xs-12">
+            <p class="ageDays">
+              {{ days ? days : "--" }} <strong>days</strong>
+            </p>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
