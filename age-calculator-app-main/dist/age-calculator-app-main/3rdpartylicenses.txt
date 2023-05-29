@@ -1,6 +1,3 @@
-@angular/animations
-MIT
-
 @angular/common
 MIT
 
@@ -36,6 +33,9 @@ THE SOFTWARE.
 
 
 @angular/platform-browser
+MIT
+
+@angular/router
 MIT
 
 moment

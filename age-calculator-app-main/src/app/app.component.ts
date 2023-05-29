@@ -1,10 +1,11 @@
 import { Component } from '@angular/core';
 
 import { AgeFormComponent } from './age-form/age-form.component';
+import { RouterModule } from '@angular/router';
 
 @Component({
   standalone: true,
-  imports: [AgeFormComponent],
+  imports: [AgeFormComponent, RouterModule],
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css'],
