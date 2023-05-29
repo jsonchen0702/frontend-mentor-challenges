@@ -5,31 +5,34 @@
 
 .container {
   background-color: hsl(0, 0%, 100%);
-  padding: 50px;
   border-radius: 20px 20px 100px 20px;
-  margin: 20%;
+  padding: 50px;
 }
 .form-group {
   margin-bottom: 8px;
+  display: flex;
+  flex-direction: column;
 }
 
 /* Style for input container */
 .input-age {
   display: flex;
+  width: 75%;
 }
 
-input.ng-invalid.ng-touched {
-  border: 1px solid hsl(0, 100%, 67%);
+input.ng-invalid.ng-touched,
+input.touched-invalid {
+  border: 1px solid hsl(0, 100%, 67%) !important;
 }
 
 input[type="text"] {
   width: 90%;
   padding: 10px;
+  color: hsl(0, 0%, 8%);
   border: 1px solid hsl(0, 0%, 86%);
   border-radius: 10px;
   font-size: 24px;
   font-weight: bold;
-  color: hsl(0, 0%, 8%);
 }
 
 input::placeholder {
@@ -37,8 +40,11 @@ input::placeholder {
   color: hsl(0, 1%, 44%);
 }
 
+input:focus {
+  outline: 1px solid hsl(259, 100%, 65%);
+}
+
 input:hover {
-  border: 2px solid hsl(259, 100%, 65%);
   cursor: pointer;
 }
 
@@ -57,6 +63,7 @@ label.touched-invalid {
 .error-message {
   color: hsl(0, 100%, 67%);
   font-size: 10px;
+  background-color: greenyellow;
 }
 
 /* Style for the submit button */
@@ -66,10 +73,11 @@ label.touched-invalid {
 }
 
 .btn {
-  padding: 15px 20px;
+  padding: 20px 20px;
   background-color: hsl(259, 100%, 65%);
   border-radius: 50%;
   cursor: pointer;
+  border: 0px;
 }
 
 .btn:hover {
@@ -98,7 +106,7 @@ strong {
 /* Style for the hr */
 hr {
   width: 90%;
-  margin: 25px 0;
+  margin: 30px 0;
   border: none;
   border-top: 1px solid hsl(0, 0%, 86%);
 }
@@ -110,11 +118,13 @@ hr {
 }
 
 /*Style for the mobile viewport*/
-@media (max-width: 750px) {
+@media (max-width: 940px) {
   .container {
-    width: 95%;
-    margin: 0 auto;
-    width: 90vw;
+    width: 60vw;
+    padding: 30px;
+  }
+  .input-age {
+    width: 100%;
   }
   .ageYears,
   .ageMonths,
@@ -124,15 +134,39 @@ hr {
     padding: 5px;
   }
 }
+@media (max-width: 620px) {
+  .container {
+    width: 75vw;
+    padding: 20px;
+  }
+  .input-age {
+    width: 100%;
+  }
+  label {
+    font-size: 12px;
+  }
+  input[type="text"] {
+    font-size: 16px;
+  }
+
+  .ageYears,
+  .ageMonths,
+  .ageDays {
+    font-size: 40px;
+    margin: 10px 0px;
+    padding: 4px;
+  }
+}
 
 @media (max-width: 375px) {
   .container {
-    width: 95%;
-    margin: 0 auto;
     width: 90vw;
   }
+  label {
+    font-size: 8px;
+  }
   input[type="text"] {
-    font-size: 14px;
+    font-size: 12px;
   }
   .submit-age {
     display: flex;
@@ -140,7 +174,8 @@ hr {
     align-items: center;
   }
   .btn {
-    margin-top: -50px;
+    margin-top: -60px;
+    padding: 15px 15px;
   }
   hr {
     width: 100%;

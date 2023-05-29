@@ -12,9 +12,9 @@
             <input
               type="text"
               id="day"
-              class="form-control"
               formControlName="day"
               placeholder="DD"
+              [class.touched-invalid]="isInputInvalidTouched('day')"
             />
           </div>
           <div
@@ -22,12 +22,12 @@
             *ngIf="ageForm.get('day')?.invalid && ageForm.get('day')?.touched"
           >
             <span *ngIf="ageForm.get('day')?.dirty; else requiredInput"
-              >Must a valid day</span
+              >Must be a valid day</span
             ><ng-template #requiredInput>
               <span>This field is required</span>
             </ng-template>
-            <span>{{ message }}</span>
           </div>
+          <span class="error-message">{{ message() }}</span>
         </div>
 
         <div class="col-xs-12">
@@ -40,9 +40,9 @@
             <input
               type="text"
               id="month"
-              class="form-control"
               formControlName="month"
               placeholder="MM"
+              [class.touched-invalid]="isInputInvalidTouched('month')"
             />
           </div>
           <div
@@ -52,7 +52,7 @@
             "
           >
             <span *ngIf="ageForm.get('month')?.dirty; else requiredInput"
-              >Must a valid month</span
+              >Must be a valid month</span
             ><ng-template #requiredInput>
               <span>This field is required</span>
             </ng-template>
@@ -69,19 +69,23 @@
             <input
               type="text"
               id="year"
-              class="form-control"
               formControlName="year"
               placeholder="YYYY"
+              [class.touched-invalid]="isInputInvalidTouched('year')"
             />
           </div>
           <div
             class="error-message"
             *ngIf="ageForm.get('year')?.invalid && ageForm.get('year')?.touched"
           >
-            <span *ngIf="ageForm.get('year')?.dirty; else requiredInput"
+            <span *ngIf="!ageForm.get('year')?.dirty"
+              >This field is required</span
+            >
+            <span *ngIf="ageForm.get('year')?.dirty && !isYearTooOld('year')"
               >Must be in the past</span
-            ><ng-template #requiredInput
-              ><span>This field is required</span></ng-template
+            >
+            <span *ngIf="ageForm.get('year')?.dirty && isYearTooOld('year')"
+              >Must be a valid year</span
             >
           </div>
         </div>
@@ -101,21 +105,22 @@
         <div class="row">
           <div class="col-xs-12">
             <p class="ageYears">
-              {{ years ? years : "--" }} <strong>years</strong>
+              {{ outputYears() ? outputYears() : "- -" }} <strong>years</strong>
             </p>
           </div>
         </div>
         <div class="row">
           <div class="col-xs-12">
             <p class="ageMonths">
-              {{ months ? months : "--" }} <strong>months</strong>
+              {{ outputMonths() ? outputMonths() : "- -" }}
+              <strong>months</strong>
             </p>
           </div>
         </div>
         <div class="row">
           <div class="col-xs-12">
             <p class="ageDays">
-              {{ days ? days : "--" }} <strong>days</strong>
+              {{ outputDays() ? outputDays() : "- -" }} <strong>days</strong>
             </p>
           </div>
         </div>
