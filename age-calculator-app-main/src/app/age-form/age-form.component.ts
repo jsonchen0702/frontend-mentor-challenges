@@ -67,8 +67,8 @@ export class AgeFormComponent implements OnInit {
     let year = this.ageForm.get('year')?.value;
 
     if (day.length == 1) {
-      day.set('0'.concat(this.ageForm.get('day')?.value));
-      this.ageForm.patchValue({ day: day() });
+      day = '0'.concat(this.ageForm.get('day')?.value);
+      this.ageForm.patchValue({ day: day });
     }
     if (month.length == 1) {
       month = '0'.concat(this.ageForm.get('month')?.value);
