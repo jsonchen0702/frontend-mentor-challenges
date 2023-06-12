@@ -6,7 +6,6 @@ import { NgModule } from '@angular/core';
 const routes: Route[] = [
   {
     path: '',
-    //component: AgeFormComponent,
     loadComponent: () =>
       import('./age-form/age-form.component').then(
         (mod) => mod.AgeFormComponent
