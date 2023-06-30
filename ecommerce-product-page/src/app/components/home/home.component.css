@@ -1,0 +1,49 @@
+.container {
+  width: 85%;
+}
+
+@media screen and (max-width: 480px) {
+  .container {
+    width: 100%;
+  }
+  .col {
+    padding: 0px;
+  }
+
+  .nav-btn-group {
+    display: flex !important;
+  }
+
+  .nav-btn {
+    position: absolute;
+    top: 30%;
+    transform: translateY(-50%);
+    background: hsl(0, 0%, 100%);
+    color: hsl(0, 0%, 0%);
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    width: 25px;
+    height: 25px;
+
+    border-radius: 50%;
+  }
+
+  .nav-btn:hover {
+    color: hsl(26, 100%, 55%);
+  }
+
+  .prev-btn {
+    left: 5%;
+  }
+
+  .next-btn {
+    right: 5%;
+  }
+
+  .nav-btn:disabled {
+    background: hsl(220, 14%, 75%);
+    color: hsl(219, 9%, 45%);
+    cursor: not-allowed;
+  }
+}

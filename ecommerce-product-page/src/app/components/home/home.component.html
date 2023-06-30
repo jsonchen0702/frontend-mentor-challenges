@@ -1,0 +1,23 @@
+<div class="container">
+  <div class="row">
+    <ng-container *ngFor="let tempProduct of productList">
+      <app-lightbox-images
+        [product]="tempProduct"
+        class="col col-md-12 col-lg-6"
+      ></app-lightbox-images>
+      <app-product-description
+        [product]="tempProduct"
+        class="col col-md-12 col-lg-6"
+      ></app-product-description>
+      <app-modal-images></app-modal-images>
+      <div class="nav-btn-group d-none justify-content-between mt-4">
+        <button id="prevBtn" class="nav-btn prev-btn" (click)="prevImage()">
+          &lt;
+        </button>
+        <button id="nextBtn" class="nav-btn next-btn" (click)="nextImage()">
+          &gt;
+        </button>
+      </div>
+    </ng-container>
+  </div>
+</div>

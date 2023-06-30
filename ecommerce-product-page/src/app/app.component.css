@@ -1,0 +1,23 @@
+.main {
+  min-height: calc(100% - 20px);
+}
+
+footer {
+  height: 20px;
+  width: 100%;
+}
+
+.attribution {
+  font-size: 11px;
+  text-align: center;
+}
+
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
+
+@media screen and (max-width: 480px) {
+  .col {
+    padding: 0px;
+  }
+}

@@ -1,0 +1,44 @@
+<div class="container">
+  <div class="row">
+    <div class="product-images col col-sm-12 d-flex flex-column mt-5">
+      <div class="d-flex text-center mb-2 mx-auto">
+        <img
+          class="main-image"
+          src="{{ product.imageMainPath }}"
+          alt="main image"
+          [style.width.px]="mainImageWidth"
+          (click)="openModalLightbox(product)"
+          loading="lazy"
+        />
+      </div>
+
+      <div
+        class="thumbnail-img-container d-flex flex-row justify-content-center mt-2 mx-auto text-center"
+      >
+        <ng-container
+          *ngFor="
+            let imageThumbnailPath of product.imagesThumbnailPath;
+            let i = index
+          "
+        >
+          <div
+            class="thumbnail-item"
+            [class.custom-outline]="i === selectedThumbnailIndex"
+            (click)="selectMainImage(imageThumbnailPath, i)"
+          >
+            <div
+              class="content-overlay"
+              [class.custom-overlay]="i === selectedThumbnailIndex"
+            ></div>
+            <img
+              id="thumbnail-image"
+              class="thumbnail-image"
+              src="{{ imageThumbnailPath }}"
+              alt="thumbnail image"
+              loading="lazy"
+            /></div
+        ></ng-container>
+      </div>
+    </div>
+  </div>
+</div>

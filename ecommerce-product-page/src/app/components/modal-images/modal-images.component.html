@@ -1,0 +1,29 @@
+<div
+  *ngIf="showModal"
+  id="modal"
+  class="modal fixed z-50 top-0 left-0 w-full h-full flex items-center justify-center inset-0 overflow-hidden"
+>
+  <span id="closeBtn" class="close-btn" (click)="close()">&times;</span>
+  <app-lightbox-images
+    [product]="productLightbox"
+    [mainImageWidth]="300"
+    class="col col-12"
+  >
+  </app-lightbox-images>
+  <button
+    id="prevBtn"
+    class="nav-btn prev-btn"
+    (click)="prevImage()"
+    [disabled]="isFirstImage"
+  >
+    &lt;
+  </button>
+  <button
+    id="nextBtn"
+    class="nav-btn next-btn"
+    (click)="nextImage()"
+    [disabled]="isLastImage"
+  >
+    &gt;
+  </button>
+</div>

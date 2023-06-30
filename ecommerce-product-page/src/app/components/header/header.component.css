@@ -1,0 +1,137 @@
+.navbar {
+  border-bottom: 1px solid hsl(220, 14%, 75%);
+  padding: 0px;
+}
+
+.container {
+  height: 80px;
+}
+
+.navbar-toggler {
+  border: none;
+  outline: none !important;
+}
+
+.navbar-brand {
+  width: 120px;
+  height: auto;
+  margin-right: 40px;
+  margin-bottom: 4px;
+}
+
+.nav-link {
+  font-family: "Kumbh Sans", sans-serif;
+  font-size: 12px;
+  display: flex;
+  align-items: center;
+  border-bottom: 3px solid transparent;
+  height: 100%;
+  color: hsl(220, 14%, 75%);
+  margin-bottom: 60px;
+}
+
+.nav-link:hover {
+  border-bottom: 3px solid hsl(26, 100%, 55%);
+  color: hsl(219, 9%, 45%);
+}
+
+.user-image {
+  cursor: pointer;
+  width: 32px;
+  height: auto;
+}
+
+.user-image:hover {
+  outline: 2px solid hsl(26, 100%, 55%);
+}
+
+.btn {
+  padding-right: 48px;
+}
+
+.icon-cart {
+  cursor: pointer;
+  opacity: 0.6;
+  width: 15px;
+  height: 15px;
+}
+
+.icon-cart:hover {
+  opacity: 1;
+}
+
+.badge-cart {
+  top: 6px;
+  right: 38px;
+  padding: 2px 6px;
+  font-size: 8px;
+  background-color: hsl(26, 100%, 55%);
+}
+
+@media screen and (max-width: 480px) {
+  .container {
+    height: 40px;
+    border-bottom: none;
+  }
+
+  .navbar {
+    padding-top: 8px;
+    padding-bottom: 8px;
+  }
+
+  .navbar-toggler {
+    padding-left: 0px;
+  }
+
+  .btn {
+    padding-right: 16px;
+    padding-bottom: 9px;
+  }
+
+  .user-image {
+    width: 20px;
+  }
+}
+
+@media screen and (max-width: 991px) {
+  .navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .navbar-toggler {
+    order: 1;
+  }
+
+  .navbar-brand {
+    order: 2;
+    margin-right: auto;
+  }
+
+  .btn {
+    order: 3;
+    padding-right: 32px;
+  }
+
+  .user-image {
+    order: 4;
+  }
+
+  .offcanvas {
+    width: 60vw !important;
+  }
+
+  .btn-close {
+    font-size: 10px;
+    margin-top: 4px;
+  }
+  .nav-link {
+    color: black;
+    margin-bottom: 10px;
+    font-weight: 700;
+  }
+  .badge-cart {
+    right: 22px;
+  }
+}

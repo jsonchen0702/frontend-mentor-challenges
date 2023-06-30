@@ -1,0 +1,28 @@
+@import url("https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap");
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+*:focus {
+  outline: none;
+  box-shadow: none;
+  border-color: none;
+}
+
+body,
+html {
+  width: 90%;
+  max-width: 1440px;
+  height: 100%;
+  margin: 0 auto;
+}
+
+@media screen and (max-width: 480px) {
+  body,
+  html {
+    width: 100%;
+    margin: 0;
+  }
+}

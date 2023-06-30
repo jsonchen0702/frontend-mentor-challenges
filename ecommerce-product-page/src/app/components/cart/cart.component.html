@@ -1,0 +1,54 @@
+<div *ngIf="showCart" class="cart container shadow bg-body-tertiary rounded">
+  <div class="row">
+    <div class="title-cart col col-12 fw-bold d-flex align-items-center">
+      <p class="my-auto">Cart</p>
+    </div>
+  </div>
+  <ng-container *ngIf="cartItems.length > 0; else noProducts">
+    <ng-container *ngFor="let theCartItem of cartItems">
+      <div class="row p-2">
+        <div class="col-2 p-0 text-center" style="height: 40px">
+          <img
+            class="img rounded-1"
+            src="{{ theCartItem.imageUrl }}"
+            loading="lazy"
+          />
+        </div>
+        <div class="col-9 ps-2" style="height: 40px">
+          <p class="description">
+            {{ theCartItem.productTitle }}
+            {{ theCartItem.unitPrice | currency }} x
+            {{ theCartItem.quantity }}
+            <span class="fw-bold total-price ps-1">{{
+              theCartItem.quantity * theCartItem.unitPrice | currency
+            }}</span>
+          </p>
+        </div>
+        <div class="col-1 p-0 text-center" style="height: 40px">
+          <img
+            class="pt-2"
+            src="../../assets/images/icon-delete.svg"
+            alt=""
+            style="width: 8px; height: auto; cursor: pointer"
+            (click)="removeItem(theCartItem)"
+            loading="lazy"
+          />
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col col-12">
+          <button class="btn fw-semibold check-btn">Checkout</button>
+        </div>
+      </div>
+    </ng-container>
+  </ng-container>
+
+  <ng-template #noProducts>
+    <div class="row container-no-products">
+      <p class="content-no-products my-auto text-center fw-bold">
+        Your cart is empty.
+      </p>
+    </div>
+  </ng-template>
+</div>

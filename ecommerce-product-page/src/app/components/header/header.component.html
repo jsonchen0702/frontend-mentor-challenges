@@ -1,0 +1,94 @@
+<nav class="navbar navbar-expand-lg bg-body-tertiary">
+  <div class="container">
+    <button
+      class="navbar-toggler navbar-custom p-1"
+      type="button"
+      data-bs-toggle="offcanvas"
+      data-bs-target="#navbarText"
+      aria-controls="navbarText"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="20"
+        height="20"
+        class="bi"
+        fill="currentColor"
+        viewBox="0 0 20 20"
+      >
+        <path
+          fill-rule="evenodd"
+          d="M2.5 11.5A.5.5 0 0 1 3 11h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4A.5.5 0 0 1 3 7h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4A.5.5 0 0 1 3 3h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z"
+        />
+      </svg>
+    </button>
+    <img
+      src="../../assets/images/logo.svg"
+      class="navbar-brand"
+      href="#"
+      alt="logo"
+      loading="lazy"
+    />
+
+    <div
+      class="navbar-offcanvas offcanvas offcanvas-start"
+      tabindex="-1"
+      id="navbarText"
+    >
+      <div class="offcanvas-header">
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="offcanvas"
+          aria-label="Close"
+        ></button>
+      </div>
+      <div class="offcanvas-body">
+        <ul class="navbar-nav">
+          <li class="nav-item me-4">
+            <a class="nav-link p-0" aria-current="page" href="#">Collections</a>
+          </li>
+          <li class="nav-item me-4">
+            <a class="nav-link p-0" href="#">Men</a>
+          </li>
+          <li class="nav-item me-4">
+            <a class="nav-link p-0" href="#">Women</a>
+          </li>
+          <li class="nav-item me-4">
+            <a class="nav-link p-0" href="#">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link p-0" href="#">Contact</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <button
+      type="button"
+      class="btn position-relative"
+      style="cursor: auto; border: none"
+    >
+      <img
+        src="../../assets/images/icon-cart.svg"
+        class="icon-cart"
+        alt="icon cart"
+        (click)="toggleCart()"
+        loading="lazy"
+      />
+      <span
+        *ngIf="totalQuantity"
+        class="badge-cart position-absolute badge rounded-3"
+      >
+        {{ totalQuantity }}
+      </span>
+    </button>
+    <img
+      src="../../assets/images/image-avatar.png"
+      class="user-image rounded-circle"
+      alt="user image"
+      loading="lazy"
+    />
+  </div>
+  <app-cart [showCart]="isCartOpen"></app-cart>
+</nav>
