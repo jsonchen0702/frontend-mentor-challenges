@@ -46,12 +46,9 @@ export class HomeComponent implements OnInit, OnDestroy {
   }
 
   prevImage() {
-    console.log('pre', this.currentImageIndex);
     this.productsService.prevImage(this.currentImageIndex);
   }
   nextImage() {
-    console.log('next', this.currentImageIndex);
-
     this.productsService.nextImage(this.currentImageIndex);
   }
 
