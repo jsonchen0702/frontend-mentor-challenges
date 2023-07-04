@@ -58,51 +58,39 @@ export class ProductsService {
   prevImage(index: number) {
     if (index > 0) {
       index--;
-      if (this.shouldShowNavButtons()) {
-        console.log('<480');
-        this.products[0].imageMainPath = this.products[0].imagesThumbnailPath[
-          index
-        ].replace('-thumbnail.jpg', '.jpg');
-        this.productsChanged.next(this.products);
-      } else {
-        console.log('>480');
-
-        this.productModalLightbox.imageMainPath =
-          this.productModalLightbox.imagesThumbnailPath[index].replace(
-            '-thumbnail.jpg',
-            '.jpg'
-          );
-        this.lightboxProductChanged.next(this.productModalLightbox);
-      }
-      this.updateState(index);
+      this.switchImage(index);
     }
   }
 
   nextImage(index: number) {
     if (index < this.lengthThumnailImages) {
       index++;
-      if (this.shouldShowNavButtons()) {
-        this.products[0].imageMainPath = this.products[0].imagesThumbnailPath[
-          index
-        ].replace('-thumbnail.jpg', '.jpg');
-        this.productsChanged.next(this.products);
-      } else {
-        this.productModalLightbox.imageMainPath =
-          this.productModalLightbox.imagesThumbnailPath[index].replace(
-            '-thumbnail.jpg',
-            '.jpg'
-          );
-        this.lightboxProductChanged.next(this.productModalLightbox);
-      }
-      this.updateState(index);
+      this.switchImage(index);
     }
   }
 
-  updateState(currentImageIndex: number) {
+  private updateState(currentImageIndex: number) {
     const prevBtn = document.getElementById('prevBtn') as HTMLButtonElement;
     const nextBtn = document.getElementById('nextBtn') as HTMLButtonElement;
 
     prevBtn.disabled = currentImageIndex === 0;
     nextBtn.disabled = currentImageIndex === this.lengthThumnailImages;
+  }
+
+  private switchImage(index: number) {
+    if (this.shouldShowNavButtons()) {
+      this.products[0].imageMainPath = this.products[0].imagesThumbnailPath[
+        index
+      ].replace('-thumbnail.jpg', '.jpg');
+      this.productsChanged.next(this.products);
+    } else {
+      this.productModalLightbox.imageMainPath =
+        this.productModalLightbox.imagesThumbnailPath[index].replace(
+          '-thumbnail.jpg',
+          '.jpg'
+        );
+      this.lightboxProductChanged.next(this.productModalLightbox);
+    }
+    this.updateState(index);
   }
 }
