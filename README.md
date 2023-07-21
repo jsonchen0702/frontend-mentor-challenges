@@ -14,6 +14,8 @@ Below is a list of the challenges I have completed:
    - [Live Demo](https://qr-code-01.netlify.app/)
 2. [Age calculator app](https://github.com/ahmed-aouinti/frontend-mentor-challenges/tree/main/age-calculator-app-main)
    - [Live Demo](https://age-calculator-app01.netlify.app/)
+3. [Ecommerce product page](https://github.com/ahmed-aouinti/frontend-mentor-challenges/tree/main/ecommerce-product-page)
+   - [Live Demo](https://ecommerce-product-page-01.netlify.app/)
 
 I will continue to update this repository with my latest submissions. Stay tuned for more exciting projects!
 
