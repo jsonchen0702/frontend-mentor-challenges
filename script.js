@@ -9,6 +9,11 @@ const projects = [
     url: "https://age-calculator-app01.netlify.app",
     imgPath: "age-calculator-app-main/src/assets",
   },
+  {
+    name: "ecommerce-product-page",
+    url: "https://ecommerce-product-page-01.netlify.app",
+    imgPath: "ecommerce-product-page/src/assets",
+  },
 ];
 
 const list = document.getElementById("list");
