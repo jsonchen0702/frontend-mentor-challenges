@@ -5,6 +5,7 @@
 
 .container {
   height: 80px;
+  background-color: hsl(0, 0%, 100%);
 }
 
 .navbar-toggler {
